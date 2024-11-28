@@ -1,0 +1,64 @@
+Check mongodb version:-
+cmd: mongod --version
+
+To connect with server:-
+cmd: mongosh
+
+To show all database from mongodb:-
+cmd: show dbs or show databases
+
+To create a new dbs:-
+cmd: use <database-name>;
+
+To delete a dbs:-
+cmd: db.dropDatabase();
+
+To show all collection in dbs:-
+cmd: show collections;
+
+TO create a new collection in database:-
+cmd: db.createCollection("<collection-name>");
+
+To delete a collection from database:-
+cmd: db.<collection-name>.drop();
+
+To insert single document in collection:-
+cmd: db.<collection-name>.insertOne({
+	field1: value1,
+	field2: value2,
+	...
+})
+
+To insert multiple document in collection:-
+cmd: db.<collection-name>.insertMany([
+	{ field1: value1, field2: value2 },
+	{ field1: value1, field2: value2 },
+])
+
+To find the multiple document in collection:-
+cmd: db.<collection-name>.find({key: value});
+
+To find the single document in collection:-
+cmd: db.<collection-name>.findOne({key: value});
+
+Ordered Inserts multiple document in collection:-
+Exp: If any insert gives an error while inserting in collection, this will add the previous document & stops the execution from the first error.
+cmd: db.<collection-name>.insertMany([
+	{ field1: value1, field2: value2 },
+	{ field1: value1, field2: value2 },
+])
+
+UnOrdered Inserts multiple document in collection:-
+Exp: If any insert gives an error while inserting in collection, this will add the previous & after document in collection & wont add error document.
+cmd: db.<collection-name>.insertMany([
+	{ field1: value1, field2: value2 },
+	{ field1: value1, field2: value2 },
+], {ordered: false});
+
+Importing JSON in MongoDB:-
+If its not in array of an object:-
+cmd: mongoimport jsonfile.json -d <database-name> -c <collection-name>
+
+If its in array of an object:-
+cmd: mongoimport jsonfile.json -d <database-name> -c <collection-name> --jsonArray
+

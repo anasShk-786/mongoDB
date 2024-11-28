@@ -1,0 +1,3 @@
+Installation Tutorial: https://www.youtube.com/watch?v=skBh4ft-IjI
+
+Mongodb Tutorial: https://www.youtube.com/watch?v=rU9ZODw5yvU&t=444s
